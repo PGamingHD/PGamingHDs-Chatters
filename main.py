@@ -1,9 +1,14 @@
+#PGamingHDs EPIC CHATTER APP!
 from network import send, connect, close;
 from datetime import datetime;
 import tkinter;
 
 def message_handler(time, player, networkMsg):
     currentDateAndTime = datetime.now().strftime("%H:%M:%S");
+    if 'system' in player:
+        msg_list.insert(tkinter.END, "[" + currentDateAndTime + "] [" + player.upper() + "]: " + networkMsg);
+        return;
+    msg_list.insert(tkinter.END, "[" + currentDateAndTime + "] (" + player + "): " + networkMsg);
 
 
 
@@ -49,3 +54,5 @@ CHANNEL = input('Enter Channel: ');
 USERNAME = input('Enter Username: ');
 
 connect(CHANNEL, USERNAME, message_handler);
+
+tkinter.mainloop();
