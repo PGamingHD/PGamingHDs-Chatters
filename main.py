@@ -12,7 +12,7 @@ def message_handler(time, player, networkMsg):
 
 
 
-def send_to_user(): #Sending function to send msg!
+def send_to_user(event=None):
     msg = my_msg.get();
     my_msg.set("");
 
@@ -24,7 +24,7 @@ def send_to_user(): #Sending function to send msg!
         close();
         top.quit();
 
-def on_closing():
+def on_closing(event=None):
     close();
     top.quit();
 
