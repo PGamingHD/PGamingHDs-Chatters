@@ -19,6 +19,10 @@ def send_to_user(): #Sending function to send msg!
         close();
         top.quit();
 
+def on_closing():
+    close();
+    top.quit();
+
 top = tkinter.Tk();
 top.title("PGamingHDs Chatters");
 
@@ -32,3 +36,5 @@ scrollbar.pack(side=tkinter.RIGHT, fill=tkinter.Y);
 msg_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH);
 msg_list.pack();
 messages_frame.pack();
+
+top.protocol("WM_DELETE_WINDOW", on_closing)
