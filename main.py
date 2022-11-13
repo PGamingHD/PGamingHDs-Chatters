@@ -5,6 +5,20 @@ import tkinter;
 def message_handler(time, player, networkMsg):
     currentDateAndTime = datetime.now().strftime("%H:%M:%S");
 
+
+
+def send_to_user(): #Sending function to send msg!
+    msg = my_msg.get();
+    my_msg.set("");
+
+    if msg == "":
+        return;
+
+    send(msg);
+    if msg == "/quit":
+        close();
+        top.quit();
+
 top = tkinter.Tk();
 top.title("PGamingHDs Chatters");
 
