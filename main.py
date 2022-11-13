@@ -7,3 +7,8 @@ def message_handler(time, player, networkMsg):
 
 top = tkinter.Tk();
 top.title("PGamingHDs Chatters");
+
+messages_frame = tkinter.Frame(top);
+my_msg = tkinter.StringVar();
+my_msg.set("Enter Message");
+scrollbar = tkinter.Scrollbar(messages_frame);
