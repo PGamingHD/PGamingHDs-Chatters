@@ -37,4 +37,10 @@ msg_list.pack(side=tkinter.LEFT, fill=tkinter.BOTH);
 msg_list.pack();
 messages_frame.pack();
 
-top.protocol("WM_DELETE_WINDOW", on_closing)
+entry_field = tkinter.Entry(top, textvariable=my_msg);
+entry_field.bind("<Return>", send_to_user);
+entry_field.pack();
+send_button = tkinter.Button(top, text="Send", command=send_to_user);
+send_button.pack()
+
+top.protocol("WM_DELETE_WINDOW", on_closing);
