@@ -41,6 +41,11 @@ entry_field = tkinter.Entry(top, textvariable=my_msg);
 entry_field.bind("<Return>", send_to_user);
 entry_field.pack();
 send_button = tkinter.Button(top, text="Send", command=send_to_user);
-send_button.pack()
+send_button.pack();
 
 top.protocol("WM_DELETE_WINDOW", on_closing);
+
+CHANNEL = input('Enter Channel: ');
+USERNAME = input('Enter Username: ');
+
+connect(CHANNEL, USERNAME, message_handler);
